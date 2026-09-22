@@ -8,27 +8,27 @@
 .cm-box::-webkit-scrollbar{width:4px}.cm-box::-webkit-scrollbar-track{background:transparent;margin:14px 0}.cm-box::-webkit-scrollbar-thumb{background:rgba(198,160,107,.55);border-radius:4px}.cm-box::-webkit-scrollbar-thumb:hover{background:#C6A06B}\
 @keyframes cm-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}\
 @media (prefers-reduced-motion:reduce){.cm-box{animation:none}}\
-.cm-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(198,160,107,.35);background:transparent;color:#B4B4BA;font-size:16px;line-height:1;cursor:pointer;transition:border-color .3s,color .3s}\
+.cm-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(198,160,107,.35);background:transparent;color:#B4B4BA;font-size:20px;line-height:1;cursor:pointer;transition:border-color .3s,color .3s}\
 .cm-close:hover{color:#fff;border-color:#C6A06B}\
-.cm-eyebrow{margin:2px 0 22px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B}\
-.cm-title{margin:0 0 32px;font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;line-height:1.08;letter-spacing:-.01em;color:#F4F4F6}\
+.cm-eyebrow{margin:2px 0 22px;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B}\
+.cm-title{margin:0 0 32px;font-family:'Instrument Serif',serif;font-weight:400;font-size:50px;line-height:1.08;letter-spacing:-.01em;color:#F4F4F6}\
 .cm-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}\
 .cm-field{margin-bottom:16px}\
-.cm-field label{display:block;margin-bottom:4px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#8A8A92}\
+.cm-field label{display:block;margin-bottom:4px;font-size:11.25px;letter-spacing:.2em;text-transform:uppercase;color:#8A8A92}\
 .cm-field label span{color:#C6A06B}\
-.cm-field input,.cm-field textarea{width:100%;box-sizing:border-box;padding:6px 0 8px;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.14);border-radius:0;color:#EDEDEF;font:inherit;font-size:14px;font-weight:300;outline:none;transition:border-color .3s}\
+.cm-field input,.cm-field textarea{width:100%;box-sizing:border-box;padding:6px 0 8px;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.14);border-radius:0;color:#EDEDEF;font:inherit;font-size:17.5px;font-weight:300;outline:none;transition:border-color .3s}\
 .cm-field textarea{min-height:64px;resize:vertical}\
 .cm-field input::placeholder,.cm-field textarea::placeholder{color:#5A5A62}\
 .cm-field input:focus,.cm-field textarea:focus{border-bottom-color:#C6A06B}\
-.cm-consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 20px;font-size:11.5px;line-height:1.55;color:#8A8A92;font-weight:300;cursor:pointer}\
+.cm-consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 20px;font-size:14.38px;line-height:1.55;color:#8A8A92;font-weight:300;cursor:pointer}\
 .cm-consent input{margin-top:1px;width:14px;height:14px;accent-color:#C6A06B;flex-shrink:0}\
 .cm-consent a{color:#EDEDEF;text-decoration:underline;text-underline-offset:2px}\
 .cm-consent a:hover{color:#C6A06B}\
-.cm-submit{display:inline-flex;align-items:center;gap:10px;padding:11px 22px;border-radius:999px;border:1px solid rgba(198,160,107,.5);background:transparent;color:#EDEDEF;font:inherit;font-size:10px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,box-shadow .4s,color .3s}\
+.cm-submit{display:inline-flex;align-items:center;gap:10px;padding:11px 22px;border-radius:999px;border:1px solid rgba(198,160,107,.5);background:transparent;color:#EDEDEF;font:inherit;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,box-shadow .4s,color .3s}\
 .cm-submit:hover{border-color:#C6A06B;color:#fff;box-shadow:0 0 40px rgba(198,160,107,.2)}\
 .cm-submit:disabled{opacity:.5;cursor:wait}\
 .cm-submit:focus-visible,.cm-close:focus-visible{outline:2px solid #C6A06B;outline-offset:3px}\
-.cm-status{margin:12px 0 0;font-size:13px;min-height:1.4em;font-weight:300}\
+.cm-status{margin:12px 0 0;font-size:16.25px;min-height:1.4em;font-weight:300}\
 .cm-status.ok{color:#C6A06B}.cm-status.err{color:#E58A7A}\
 .cm-hp{position:absolute;left:-9999px}\
 @media (max-width:600px){.cm-box{padding:26px 20px 22px}.cm-row{grid-template-columns:1fr;gap:0}}";
