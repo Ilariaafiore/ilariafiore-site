@@ -848,8 +848,9 @@
         try { onTop = this._ctl.matches(':popover-open'); } catch {}
         if (onTop) {
           const r = this.getBoundingClientRect();
-          this._ctl.style.left = (r.right - 8) + 'px';
-          this._ctl.style.top = (r.top + 8) + 'px';
+          const z = this._ctl.currentCSSZoom || 1;
+          this._ctl.style.left = (r.right / z - 8) + 'px';
+          this._ctl.style.top = (r.top / z + 8) + 'px';
         }
       }
       if (!g) {
@@ -883,12 +884,15 @@
         // sizing from layout px alone renders it 1/scale too large under a
         // scaled deck slide. Inner ghost + handles stay box-relative.
         const r = this.getBoundingClientRect();
-        const sx = g.fw ? r.width / g.fw : 1;
-        const sy = g.fh ? r.height / g.fh : 1;
+        // CSS zoom still applies in the top layer, so px values set here are
+        // multiplied by it: divide viewport px by the spill's own zoom.
+        const z = this._spill.currentCSSZoom || 1;
+        const sx = g.fw ? r.width / g.fw / z : 1;
+        const sy = g.fh ? r.height / g.fh / z : 1;
         this._spill.style.width = (g.iw * k * sx) + 'px';
         this._spill.style.height = (g.ih * k * sy) + 'px';
-        this._spill.style.left = (r.left + (50 + this._view.x) / 100 * r.width) + 'px';
-        this._spill.style.top = (r.top + (50 + this._view.y) / 100 * r.height) + 'px';
+        this._spill.style.left = (r.left + (50 + this._view.x) / 100 * r.width) / z + 'px';
+        this._spill.style.top = (r.top + (50 + this._view.y) / 100 * r.height) / z + 'px';
       }
     }
 
