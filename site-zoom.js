@@ -1,5 +1,5 @@
-// Scales every page proportionally on screens wider than the 1300px design
-// width, so wide screens show the 1300px layout, just larger. Below 1300px
+// Scales every page proportionally on screens wider than the 1140px design
+// width, so wide screens show the 1140px layout, just larger. Below 1140px
 // nothing changes.
 //
 // CSS zoom also inflates vw/vh units by the zoom factor in engines that
@@ -7,7 +7,7 @@
 // their viewport units by --vz, which is measured here so it stays correct
 // in engines that don't inflate them.
 (function () {
-  var DESIGN_WIDTH = 1300;
+  var DESIGN_WIDTH = 1140;
   var root = document.documentElement;
 
   function measureViewportInflation(zoom) {
