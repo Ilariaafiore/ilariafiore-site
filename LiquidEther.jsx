@@ -82,6 +82,7 @@ function LiquidEther({
           this.height = 0;
           this.aspect = 1;
           this.pixelRatio = 1;
+          this.zoom = 1;
           this.isMobile = false;
           this.breakpoint = 768;
           this.fboWidth = null;
@@ -99,7 +100,7 @@ function LiquidEther({
           this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
           this.renderer.autoClear = false;
           this.renderer.setClearColor(new THREE.Color(0x000000), 0);
-          this.renderer.setPixelRatio(this.pixelRatio);
+          this.renderer.setPixelRatio(this.pixelRatio * this.zoom);
           this.renderer.setSize(this.width, this.height);
           this.renderer.domElement.style.width = '100%';
           this.renderer.domElement.style.height = '100%';
@@ -110,10 +111,16 @@ function LiquidEther({
         resize() {
           if (!this.container) return;
           const rect = this.container.getBoundingClientRect();
-          this.width = Math.max(1, Math.floor(rect.width));
-          this.height = Math.max(1, Math.floor(rect.height));
+          // Size in CSS px so the simulation scales with page zoom like the
+          // rest of the layout; the pixel ratio keeps the canvas sharp.
+          this.zoom = this.container.currentCSSZoom || 1;
+          this.width = Math.max(1, Math.floor(rect.width / this.zoom));
+          this.height = Math.max(1, Math.floor(rect.height / this.zoom));
           this.aspect = this.width / this.height;
-          if (this.renderer) this.renderer.setSize(this.width, this.height, false);
+          if (this.renderer) {
+            this.renderer.setPixelRatio(this.pixelRatio * this.zoom);
+            this.renderer.setSize(this.width, this.height, false);
+          }
         }
         update() {
           this.delta = this.clock.getDelta();

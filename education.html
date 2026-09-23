@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./site-zoom.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -47,9 +48,9 @@
   </div>
   <div style="position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(900px 620px at 60% 4%, rgba(198,160,107,.07), rgba(8,8,10,0) 70%);"></div>
 
-  <header id="nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(16px,3vw,40px);border-bottom:1px solid transparent;transition:background .45s ease, padding .45s ease, border-color .45s ease;">
+  <header id="nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(16px,calc(3vw / var(--vz, 1)),40px);border-bottom:1px solid transparent;transition:background .45s ease, padding .45s ease, border-color .45s ease;">
     <a href="index.html#top" style="display:flex;align-items:center;height:44px;"><img src="uploads/ilaria-fiore-signature-transparent.png" alt="Ilaria Fiore" style="height:46px;width:auto;display:block;margin:-1px 0;"></a>
-    <nav style="position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:clamp(18px,2.6vw,36px);">
+    <nav style="position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:clamp(18px,calc(2.6vw / var(--vz, 1)),36px);">
       <a href="work.html" style="font-size:10px;text-transform:uppercase;color:#9A9AA2;letter-spacing:.24em;transition:color .3s;" style-hover="color:#FFFFFF;">Work</a>
       <a href="about.html" style="font-size:10px;text-transform:uppercase;color:#9A9AA2;letter-spacing:.24em;transition:color .3s;" style-hover="color:#FFFFFF;">About</a>
       <a href="education.html" style="font-size:10px;text-transform:uppercase;color:#C6A06B;letter-spacing:.24em;transition:color .3s;" style-hover="color:#FFFFFF;">Education</a>
@@ -58,15 +59,15 @@
     <a id="nav-contact" href="#contact" data-contact="true" style="font-size:10px;text-transform:uppercase;color:#9A9AA2;letter-spacing:.24em;white-space:nowrap;padding:7px 14px;border:1px solid transparent;border-radius:999px;transition:color .3s,border-color .3s;">Contact</a>
   </header>
 
-  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:180px clamp(16px,3vw,40px) 0;">
+  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:180px clamp(16px,calc(3vw / var(--vz, 1)),40px) 0;">
     <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:26px;">
       <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B;">Education</span>
     </div>
-    <h1 data-reveal style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,4.4vw,62px);line-height:1.06;letter-spacing:-.015em;color:#F4F4F6;margin:0;max-width:22ch;">Making Space and STEM<br><em style="font-style:italic;color:#C6A06B;">accessible for everyone.</em></h1>
+    <h1 data-reveal style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,calc(4.4vw / var(--vz, 1)),62px);line-height:1.06;letter-spacing:-.015em;color:#F4F4F6;margin:0;max-width:22ch;">Making Space and STEM<br><em style="font-style:italic;color:#C6A06B;">accessible for everyone.</em></h1>
     <p data-reveal style="margin:26px 0 0;font-size:16px;line-height:1.72;color:#9A9AA2;max-width:58ch;font-weight:300;">Interactive workshops, courses, and public events designed for all ages, built around real space missions and emerging technologies.</p>
   </section>
 
-  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(64px,9vh,110px) clamp(16px,3vw,40px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(320px,42%)),1fr));gap:20px;">
+  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(64px,calc(9vh / var(--vz, 1)),110px) clamp(16px,calc(3vw / var(--vz, 1)),40px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(320px,42%)),1fr));gap:20px;">
 
     <div data-reveal style="display:flex;flex-direction:column;padding:36px 30px;border:1px solid rgba(198,160,107,.2);border-radius:18px;background:rgba(255,255,255,.014);transition:border-color .4s,box-shadow .4s,background .4s;" style-hover="border-color:#C6A06B;box-shadow:0 0 46px rgba(198,160,107,.16);background:rgba(255,255,255,.026);">
       <span style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;margin-bottom:24px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6A06B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12.5V18c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"></path></svg></span>
@@ -94,7 +95,7 @@
       <a href="#contact" data-contact="true" style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#EDEDEF;display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid rgba(198,160,107,.5);padding-bottom:8px;align-self:flex-start;transition:gap .3s,border-color .3s;" style-hover="gap:16px;border-color:#C6A06B;">Ask the syllabus <span>&#8594;</span></a>
     </div>
 
-    <div data-reveal style="grid-column:1 / -1;display:grid;grid-template-columns:56px minmax(0,1.1fr) minmax(0,1fr);align-items:start;column-gap:clamp(24px,3vw,52px);row-gap:20px;padding:38px clamp(28px,3vw,44px);border:1px solid rgba(198,160,107,.2);border-radius:18px;background:rgba(255,255,255,.014);transition:border-color .4s,box-shadow .4s,background .4s;" style-hover="border-color:#C6A06B;box-shadow:0 0 46px rgba(198,160,107,.16);background:rgba(255,255,255,.026);">
+    <div data-reveal style="grid-column:1 / -1;display:grid;grid-template-columns:56px minmax(0,1.1fr) minmax(0,1fr);align-items:start;column-gap:clamp(24px,calc(3vw / var(--vz, 1)),52px);row-gap:20px;padding:38px clamp(28px,calc(3vw / var(--vz, 1)),44px);border:1px solid rgba(198,160,107,.2);border-radius:18px;background:rgba(255,255,255,.014);transition:border-color .4s,box-shadow .4s,background .4s;" style-hover="border-color:#C6A06B;box-shadow:0 0 46px rgba(198,160,107,.16);background:rgba(255,255,255,.026);">
       <span style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6A06B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"></path><path d="M9 21v-6h6v6"></path></svg></span>
       <div><div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A8A92;margin-bottom:12px;">For institutions</div>
       <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:28px;line-height:1.14;color:#F2F2F4;margin:0 0 14px;">Institutions &amp; Beyond</h2>
@@ -110,21 +111,21 @@
     </div>
   </section>
 
-  <section id="courses" style="position:relative;z-index:5;padding:clamp(70px,11vh,130px) 0 0;scroll-margin-top:40px;">
-    <div style="max-width:min(1760px,100%);margin:0 auto;padding:0 clamp(16px,3vw,40px);display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:34px;">
+  <section id="courses" style="position:relative;z-index:5;padding:clamp(70px,calc(11vh / var(--vz, 1)),130px) 0 0;scroll-margin-top:40px;">
+    <div style="max-width:min(1760px,100%);margin:0 auto;padding:0 clamp(16px,calc(3vw / var(--vz, 1)),40px);display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:34px;">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B;">Catalogue</span>
         </div>
-        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1.1;color:#F2F2F4;margin:0;">Courses and workshops</h2>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,calc(3vw / var(--vz, 1)),40px);line-height:1.1;color:#F2F2F4;margin:0;">Courses and workshops</h2>
       </div>
       <p style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#65656D;font-weight:400;margin:0;">Select a course to see the full program</p>
     </div>
 
-    <div style="position:relative;width:min(1760px,100%);margin:0 auto;padding-left:clamp(16px,3vw,40px);padding-right:clamp(16px,3vw,40px);box-sizing:border-box;">
+    <div style="position:relative;width:min(1760px,100%);margin:0 auto;padding-left:clamp(16px,calc(3vw / var(--vz, 1)),40px);padding-right:clamp(16px,calc(3vw / var(--vz, 1)),40px);box-sizing:border-box;">
     <div id="courses-scroll" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 30px;scrollbar-width:none;">
       <sc-for list="{{ courses }}" as="c" hint-placeholder-count="4">
-        <div id="{{ c.anchor }}" onClick="{{ c.open }}" style="scroll-snap-align:start;flex:0 0 clamp(268px,22vw,360px);position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;padding:30px 26px;border:1px solid {{ c.hlBorder }};border-radius:18px;background:{{ c.hlBg }};box-shadow:{{ c.hlGlow }};cursor:pointer;transition:border-color .6s,box-shadow .6s,transform .4s,background .6s;" style-hover="border-color:#C6A06B;box-shadow:0 0 46px rgba(198,160,107,.16);transform:translateY(-4px);background:rgba(255,255,255,.026);">
+        <div id="{{ c.anchor }}" onClick="{{ c.open }}" style="scroll-snap-align:start;flex:0 0 clamp(268px,calc(22vw / var(--vz, 1)),360px);position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;padding:30px 26px;border:1px solid {{ c.hlBorder }};border-radius:18px;background:{{ c.hlBg }};box-shadow:{{ c.hlGlow }};cursor:pointer;transition:border-color .6s,box-shadow .6s,transform .4s,background .6s;" style-hover="border-color:#C6A06B;box-shadow:0 0 46px rgba(198,160,107,.16);transform:translateY(-4px);background:rgba(255,255,255,.026);">
           <svg viewBox="0 0 320 420" preserveAspectRatio="xMidYMax meet" fill="none" stroke="#C6A06B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:0;bottom:0;width:100%;height:72%;opacity:.42;pointer-events:none;z-index:0;">
             <path d="{{ c.art }}"></path>
             <path d="{{ c.art2 }}" stroke-width="{{ c.art2w }}" opacity="0.7"></path>
@@ -145,8 +146,8 @@
   </section>
 
   <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:80;background:rgba(4,4,6,.78);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,42px);">
-      <div onClick="{{ stop }}" data-modal-scroll style="position:relative;width:min(1080px,100%);max-height:88vh;overflow-y:auto;background:#0B0B0E;border:1px solid rgba(198,160,107,.26);border-radius:20px;padding:clamp(26px,3.4vw,46px);">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:80;background:rgba(4,4,6,.78);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:clamp(12px,calc(3vw / var(--vz, 1)),42px);">
+      <div onClick="{{ stop }}" data-modal-scroll style="position:relative;width:min(1080px,100%);max-height:calc(88vh / var(--vz, 1));overflow-y:auto;background:#0B0B0E;border:1px solid rgba(198,160,107,.26);border-radius:20px;padding:clamp(26px,calc(3.4vw / var(--vz, 1)),46px);">
         <button onClick="{{ closeModal }}" style="position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:transparent;color:#EDEDEF;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s,color .3s;" style-hover="border-color:#C6A06B;color:#C6A06B;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>
         </button>
@@ -156,7 +157,7 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C6A06B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="{{ sel.icon }}"></path><path d="{{ sel.icon2 }}"></path><circle cx="{{ sel.dotX }}" cy="{{ sel.dotY }}" r="{{ sel.dotR }}"></circle></svg>
           </span>
           <div>
-            <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.14;color:#F4F4F6;margin:0 0 14px;">{{ sel.title }}</h3>
+            <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,calc(2.6vw / var(--vz, 1)),34px);line-height:1.14;color:#F4F4F6;margin:0 0 14px;">{{ sel.title }}</h3>
             <div style="display:flex;flex-wrap:wrap;gap:7px;">
               <sc-for list="{{ sel.tags }}" as="t" hint-placeholder-count="3">
                 <span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#C6A06B;border:1px solid rgba(198,160,107,.32);border-radius:999px;padding:5px 11px;">{{ t }}</span>
@@ -165,7 +166,7 @@
           </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,3.4vw,54px);padding:32px 0 0;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,calc(3.4vw / var(--vz, 1)),54px);padding:32px 0 0;">
           <div>
             <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#65656D;margin-bottom:14px;">Summary</div>
             <p style="font-size:15px;line-height:1.75;color:#B4B4BA;font-weight:300;margin:0 0 34px;">{{ sel.summary }}</p>
@@ -214,19 +215,19 @@
     </div>
   </sc-if>
 
-  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(70px,11vh,130px) clamp(16px,3vw,40px) 0;">
+  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(70px,calc(11vh / var(--vz, 1)),130px) clamp(16px,calc(3vw / var(--vz, 1)),40px) 0;">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:34px;">
       <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B;">Latest educational projects</span>
     </div>
     <div style="display:flex;flex-direction:column;">
-      <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 90px 30px;gap:clamp(14px,3vw,44px);padding:0 clamp(6px,1vw,14px) 14px;">
+      <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 90px 30px;gap:clamp(14px,calc(3vw / var(--vz, 1)),44px);padding:0 clamp(6px,calc(1vw / var(--vz, 1)),14px) 14px;">
         <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#65656D;">Project &amp; topic</span>
         <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#65656D;">Host institution</span>
         <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#65656D;">Year</span>
         <span></span>
       </div>
       <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
-        <div id="{{ p.anchor }}" onClick="{{ p.open }}" role="button" tabIndex="0" style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 90px 30px;gap:clamp(14px,3vw,44px);padding:22px clamp(6px,1vw,14px);border-top:1px solid rgba(255,255,255,.08);align-items:center;cursor:pointer;background:{{ p.bg }};box-shadow:{{ p.glow }};transition:background .6s,box-shadow .6s;" style-hover="background:rgba(255,255,255,.035);">
+        <div id="{{ p.anchor }}" onClick="{{ p.open }}" role="button" tabIndex="0" style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 90px 30px;gap:clamp(14px,calc(3vw / var(--vz, 1)),44px);padding:22px clamp(6px,calc(1vw / var(--vz, 1)),14px);border-top:1px solid rgba(255,255,255,.08);align-items:center;cursor:pointer;background:{{ p.bg }};box-shadow:{{ p.glow }};transition:background .6s,box-shadow .6s;" style-hover="background:rgba(255,255,255,.035);">
           <span style="font-size:16px;color:#EDEDEF;white-space:pre-line;">{{ p.name }}</span>
           <span style="font-size:12px;color:#9A9AA2;font-weight:300;white-space:pre-line;">{{ p.host }}</span>
           <span style="font-size:12px;color:#9A9AA2;font-weight:300;white-space:nowrap;">{{ p.year }}</span>
@@ -246,15 +247,15 @@
   </section>
 
   <sc-if value="{{ projOpen }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ closeProject }}" style="position:fixed;inset:0;z-index:90;background:rgba(4,4,6,.78);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,42px);">
-      <div onClick="{{ stop }}" data-modal-scroll style="position:relative;width:min(760px,100%);max-height:86vh;overflow-y:auto;background:#0B0B0E;border:1px solid rgba(198,160,107,.26);border-radius:18px;padding:clamp(22px,2.6vw,32px);">
+    <div onClick="{{ closeProject }}" style="position:fixed;inset:0;z-index:90;background:rgba(4,4,6,.78);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:clamp(12px,calc(3vw / var(--vz, 1)),42px);">
+      <div onClick="{{ stop }}" data-modal-scroll style="position:relative;width:min(760px,100%);max-height:calc(86vh / var(--vz, 1));overflow-y:auto;background:#0B0B0E;border:1px solid rgba(198,160,107,.26);border-radius:18px;padding:clamp(22px,calc(2.6vw / var(--vz, 1)),32px);">
         <button onClick="{{ closeProject }}" style="position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.12);background:transparent;color:#EDEDEF;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s,color .3s;" style-hover="border-color:#C6A06B;color:#C6A06B;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>
         </button>
 
-        <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,2.4vw,32px);align-items:start;">
+        <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,calc(2.4vw / var(--vz, 1)),32px);align-items:start;">
           <div style="min-width:0;display:flex;flex-direction:column;">
-            <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,2.2vw,28px);line-height:1.16;color:#F4F4F6;margin:0 0 14px;padding-right:34px;">{{ psel.modalTitle }}</h3>
+            <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(21px,calc(2.2vw / var(--vz, 1)),28px);line-height:1.16;color:#F4F4F6;margin:0 0 14px;padding-right:34px;">{{ psel.modalTitle }}</h3>
             <p style="font-size:14px;line-height:1.7;color:#B4B4BA;font-weight:300;margin:0 0 22px;">{{ psel.desc }}</p>
             <sc-if value="{{ psel.href }}" hint-placeholder-val="{{ true }}">
             <a href="{{ psel.href }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:10px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#EDEDEF;border:1px solid rgba(198,160,107,.45);border-radius:999px;padding:11px 20px;white-space:nowrap;transition:border-color .3s,color .3s,gap .3s;" style-hover="border-color:#C6A06B;color:#FFFFFF;gap:16px;">{{ psel.linkLabel }} <span>&#8599;</span></a>
@@ -298,8 +299,8 @@
   </sc-if>
 
   <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
-    <div onClick="{{ closeZoom }}" style="position:fixed;inset:0;z-index:120;background:rgba(3,3,5,.94);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:clamp(14px,4vw,56px);cursor:zoom-out;">
-      <div style="width:100%;height:88vh;background-image:url({{ zoomSrc }});background-size:contain;background-position:center;background-repeat:no-repeat;border-radius:10px;"></div>
+    <div onClick="{{ closeZoom }}" style="position:fixed;inset:0;z-index:120;background:rgba(3,3,5,.94);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:clamp(14px,calc(4vw / var(--vz, 1)),56px);cursor:zoom-out;">
+      <div style="width:100%;height:calc(88vh / var(--vz, 1));background-image:url({{ zoomSrc }});background-size:contain;background-position:center;background-repeat:no-repeat;border-radius:10px;"></div>
       <sc-if value="{{ zoomMulti }}" hint-placeholder-val="{{ false }}">
         <button onClick="{{ zoomPrev }}" aria-label="Previous" style="position:fixed;left:22px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(8,8,10,.6);color:#EDEDEF;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:1;padding:0;transition:border-color .3s,color .3s;" style-hover="border-color:#C6A06B;color:#C6A06B;">&#8592;</button>
         <button onClick="{{ zoomNext }}" aria-label="Next" style="position:fixed;right:22px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(8,8,10,.6);color:#EDEDEF;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:1;padding:0;transition:border-color .3s,color .3s;" style-hover="border-color:#C6A06B;color:#C6A06B;">&#8594;</button>
@@ -311,15 +312,15 @@
     </div>
   </sc-if>
 
-  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(44px,6vh,80px) clamp(16px,3vw,40px) clamp(80px,12vh,140px);">
-    <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:clamp(44px,6vh,70px);text-align:center;">
-      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,3.4vw,46px);line-height:1.1;color:#F4F4F6;margin:0;">Planning something<br>for your students?</h2>
+  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(44px,calc(6vh / var(--vz, 1)),80px) clamp(16px,calc(3vw / var(--vz, 1)),40px) clamp(80px,calc(12vh / var(--vz, 1)),140px);">
+    <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:clamp(44px,calc(6vh / var(--vz, 1)),70px);text-align:center;">
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,calc(3.4vw / var(--vz, 1)),46px);line-height:1.1;color:#F4F4F6;margin:0;">Planning something<br>for your students?</h2>
       <p style="font-size:16px;line-height:1.7;color:#9A9AA2;margin:22px auto 32px;max-width:52ch;font-weight:300;">Tell me the age group and the time you have, and I&#8217;ll propose a format.</p>
       <a href="#contact" data-contact="true" style="display:inline-flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#EDEDEF;border:1px solid rgba(198,160,107,.45);border-radius:999px;padding:14px 26px;white-space:nowrap;transition:border-color .3s,color .3s,box-shadow .4s;" style-hover="border-color:#C6A06B;color:#FFFFFF;box-shadow:0 0 40px rgba(198,160,107,.2);">Get in touch <span>&#8594;</span></a>
     </div>
   </section>
 
-  <footer style="background:rgba(6,6,8,.78);border-top:1px solid rgba(255,255,255,.08);padding:clamp(44px,6vh,64px) clamp(16px,3vw,40px) 40px;">
+  <footer style="background:rgba(6,6,8,.78);border-top:1px solid rgba(255,255,255,.08);padding:clamp(44px,calc(6vh / var(--vz, 1)),64px) clamp(16px,calc(3vw / var(--vz, 1)),40px) 40px;">
     <div style="max-width:min(1760px,100%);margin:0 auto;">
       <div style="display:flex;flex-wrap:wrap;gap:56px;justify-content:space-between;">
         <div style="flex:1 1 300px;max-width:360px;">
@@ -569,7 +570,7 @@ class Component extends DCLogic {
     if (hash === 'courses' || cIdx >= 0) {
       setTimeout(() => {
         const el = document.getElementById('courses');
-        if (el) window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - 40), behavior: 'smooth' });
+        if (el) window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - 40 * (el.currentCSSZoom || 1)), behavior: 'smooth' });
         if (cIdx >= 0) {
           const card = document.getElementById(hash), track = document.getElementById('courses-scroll');
           if (card && track) track.scrollTo({ left: Math.max(0, card.offsetLeft - track.offsetLeft - 4), behavior: 'smooth' });
@@ -598,7 +599,7 @@ class Component extends DCLogic {
     const el = document.getElementById('courses-scroll');
     if (!el) return;
     const card = el.firstElementChild;
-    const step = card ? card.getBoundingClientRect().width + 20 : 320;
+    const step = card ? card.getBoundingClientRect().width / (card.currentCSSZoom || 1) + 20 : 320;
     el.scrollBy({ left: dir * step, behavior: 'smooth' });
   }
   renderVals() {

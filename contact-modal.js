@@ -4,7 +4,7 @@
   var css = "\
 .cm-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,5,7,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}\
 .cm-overlay.is-open{display:flex}\
-.cm-box{position:relative;width:100%;max-width:520px;max-height:calc(100vh - 48px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(198,160,107,.55) transparent;background:#0E0E12;border:1px solid rgba(198,160,107,.4);border-radius:16px;padding:30px 30px 26px;color:#EDEDEF;font-family:'Instrument Sans',system-ui,sans-serif;box-shadow:0 0 80px rgba(198,160,107,.08);animation:cm-in .3s cubic-bezier(.2,.7,.2,1)}\
+.cm-box{position:relative;width:100%;max-width:520px;max-height:calc(calc(100vh / var(--vz, 1)) - 48px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(198,160,107,.55) transparent;background:#0E0E12;border:1px solid rgba(198,160,107,.4);border-radius:16px;padding:30px 30px 26px;color:#EDEDEF;font-family:'Instrument Sans',system-ui,sans-serif;box-shadow:0 0 80px rgba(198,160,107,.08);animation:cm-in .3s cubic-bezier(.2,.7,.2,1)}\
 .cm-box::-webkit-scrollbar{width:4px}.cm-box::-webkit-scrollbar-track{background:transparent;margin:14px 0}.cm-box::-webkit-scrollbar-thumb{background:rgba(198,160,107,.55);border-radius:4px}.cm-box::-webkit-scrollbar-thumb:hover{background:#C6A06B}\
 @keyframes cm-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}\
 @media (prefers-reduced-motion:reduce){.cm-box{animation:none}}\
