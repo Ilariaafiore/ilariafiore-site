@@ -59,12 +59,23 @@
     <a id="nav-contact" href="#contact" data-contact="true" style="font-size:10px;text-transform:uppercase;color:#9A9AA2;letter-spacing:.24em;white-space:nowrap;padding:7px 14px;border:1px solid transparent;border-radius:999px;transition:color .3s,border-color .3s;">Contact</a>
   </header>
 
-  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:180px clamp(16px,calc(3vw / var(--vz, 1)),40px) 0;">
-    <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:26px;">
-      <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B;">Education</span>
+  <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:180px clamp(16px,calc(3vw / var(--vz, 1)),40px) 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(36px,calc(4vw / var(--vz, 1)),64px);">
+    <div style="flex:1 1 460px;min-width:0;">
+      <div data-reveal style="display:flex;align-items:center;gap:12px;margin-bottom:26px;">
+        <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C6A06B;">Outreach</span>
+      </div>
+      <h1 data-reveal style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,calc(4.4vw / var(--vz, 1)),62px);line-height:1.06;letter-spacing:-.015em;color:#F4F4F6;margin:0;max-width:22ch;">Making Space and STEM<br><em style="font-style:italic;color:#C6A06B;">accessible for everyone.</em></h1>
+      <p data-reveal style="margin:26px 0 0;font-size:16px;line-height:1.72;color:#9A9AA2;max-width:58ch;font-weight:300;">Interactive workshops, courses, and public events designed for all ages, built around real space missions and emerging technologies.</p>
     </div>
-    <h1 data-reveal style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,calc(4.4vw / var(--vz, 1)),62px);line-height:1.06;letter-spacing:-.015em;color:#F4F4F6;margin:0;max-width:22ch;">Making Space and STEM<br><em style="font-style:italic;color:#C6A06B;">accessible for everyone.</em></h1>
-    <p data-reveal style="margin:26px 0 0;font-size:16px;line-height:1.72;color:#9A9AA2;max-width:58ch;font-weight:300;">Interactive workshops, courses, and public events designed for all ages, built around real space missions and emerging technologies.</p>
+    <!-- auto-scrolling photos -->
+    <div data-reveal style="flex:0 1 520px;min-width:min(100%,280px);position:relative;aspect-ratio:4/3;border:1px solid rgba(198,160,107,.25);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025);">
+      <div id="outreach-carousel" style="display:flex;width:100%;height:100%;transition:transform 1.1s cubic-bezier(.65,0,.35,1);">
+        <image-slot id="outreach-hero-1" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 1"></image-slot>
+        <image-slot id="outreach-hero-2" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 2"></image-slot>
+        <image-slot id="outreach-hero-3" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 3"></image-slot>
+        <image-slot id="outreach-hero-4" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 4"></image-slot>
+      </div>
+    </div>
   </section>
 
   <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(64px,calc(9vh / var(--vz, 1)),110px) clamp(16px,calc(3vw / var(--vz, 1)),40px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(320px,42%)),1fr));gap:20px;">
@@ -327,8 +338,8 @@
           <img src="uploads/ilaria-fiore-signature-transparent.png" alt="Ilaria Fiore" style="height:96px;width:auto;display:block;margin:-26px 0 2px -6px;">
           <p style="font-size:14px;line-height:1.7;color:#7C7C84;margin:0;font-weight:300;">Building the connections behind the ideas shaping our future, across space, tech and innovation.</p>
           <div style="display:flex;gap:12px;margin-top:24px;">
-            <a href="#" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:#C6A06B;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EDEDEF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v1.57A6 6 0 0 1 16 8z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-            <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:#C6A06B;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EDEDEF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="https://www.linkedin.com/in/fiore-ilaria/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:#C6A06B;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EDEDEF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v1.57A6 6 0 0 1 16 8z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="https://www.instagram.com/ilariaafiore/" target="_blank" rel="noopener" aria-label="Instagram" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:#C6A06B;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EDEDEF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
             <a href="#" aria-label="YouTube" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:#C6A06B;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EDEDEF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
             <a href="#" aria-label="X" style="width:34px;height:34px;border-radius:50%;border:1px solid rgba(198,160,107,.4);display:flex;align-items:center;justify-content:center;transition:border-color .3s;" style-hover="border-color:#C6A06B;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EDEDEF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></a>
           </div>
@@ -506,6 +517,12 @@ const ART = [
 ];
 
 const PROJECTS = [
+  { name: 'Orientarsi oltre la Terra\n(Finding Our Bearings Beyond Earth)', host: 'TEDxApricena, Apricena | Italy', year: 'Oct 2026',
+    modalTitle: 'Orientarsi oltre la Terra (Finding Our Bearings Beyond Earth)',
+    desc: 'What happens to our points of reference when our perspective changes? This talk takes the audience on a journey from Earth to the International Space Station, and on to the Moon and Mars. It explores how orientation, our perception of the sky, and the way we inhabit space change far from our home planet. In orbit, “up” and “down” have to be designed. From the Martian sky, Earth is just a bright dot. In the habitats of the future, every detail becomes a reference point. Bridging science communication and space architecture, the talk carries a message that applies to everyone: points of reference are not always found. Sometimes, we build them.',
+    specs: [{ k: 'Theme', v: 'How what we see and the spaces we inhabit change' }, { k: 'Invited by', v: 'TEDxApricena · “Oltre la Pietra” (“Beyond the Stone”) edition' }, { k: 'When', v: 'October 3, 2026' }, { k: 'Where', v: 'Casa Matteo Salvatore, Apricena | Italy' }],
+    images: ['uploads/TEDxApricena-1.jpg', 'uploads/TEDxApricena-2.jpg', 'uploads/TEDxApricena-3.jpg'],
+    href: 'https://m.twitch.tv/tedxapricena', linkLabel: 'Watch on Twitch' },
   { name: 'Discovering Space', host: 'I.C. Pascoli F. Melchionda,\nSan Giovanni Rotondo | Italy', year: 'May 2026',
     modalTitle: 'Discover Space',
     desc: 'An interactive STEAM-focused lecture with primary school students, guiding them on a journey to discover the wonders of the universe. The session introduced foundational space concepts about the solar system, the space exploration and Artemis II mission.',
@@ -563,6 +580,7 @@ const PROJECTS = [
 class Component extends DCLogic {
   state = { selected: null, project: null, zoom: null, showAllProjects: false };
   componentDidMount() {
+    this.initCarousel();
     this._esc = (e) => { if (e.key === 'Escape') this.setState(st => st.zoom != null ? { zoom: null } : { selected: null, project: null }); };
     window.addEventListener('keydown', this._esc);
     const hash = decodeURIComponent((window.location.hash || '').slice(1));
@@ -594,7 +612,17 @@ class Component extends DCLogic {
   }
   cslug(t) { return 'course-' + String(t).split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   slug(s) { return 'project-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
-  componentWillUnmount() { window.removeEventListener('keydown', this._esc); clearTimeout(this._hl); clearTimeout(this._chl); }
+  componentWillUnmount() { window.removeEventListener('keydown', this._esc); clearTimeout(this._hl); clearTimeout(this._chl); clearInterval(this._carousel); }
+  initCarousel() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0;
+    this._carousel = setInterval(() => {
+      const track = document.getElementById('outreach-carousel');
+      if (!track || document.hidden) return;
+      i = (i + 1) % track.children.length;
+      track.style.transform = 'translateX(' + (-100 * i) + '%)';
+    }, 4500);
+  }
   scrollCourses(dir) {
     const el = document.getElementById('courses-scroll');
     if (!el) return;
