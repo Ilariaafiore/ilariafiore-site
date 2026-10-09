@@ -48,7 +48,7 @@
     </div>\
     <div class="cm-field"><label for="cmEmail">Email <span>*</span></label><input id="cmEmail" name="email" type="email" placeholder="you@organisation.com" required autocomplete="email"></div>\
     <div class="cm-field"><label for="cmMsg">Message <span>*</span></label><textarea id="cmMsg" name="message" placeholder="Tell me about your project or idea." required></textarea></div>\
-    <label class="cm-consent"><input type="checkbox" name="privacy_consent" value="yes" required><span>I have read the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and consent to the processing of my personal data to handle this request. *</span></label>\
+    <label class="cm-consent"><input type="checkbox" name="privacy_policy_read" value="yes" required><span>I have read the <a href="/privacy-policy" target="_blank">Privacy Policy</a>. *</span></label>\
     <button class="cm-submit" type="submit">Send message <span aria-hidden="true">&rarr;</span></button>\
     <p class="cm-status" role="status" aria-live="polite"></p>\
   </form>\
@@ -88,7 +88,7 @@
       status.className = 'cm-status';
       if (!form.checkValidity()) {
         var bad = form.querySelector(':invalid');
-        status.textContent = bad.type === 'checkbox' ? 'Please accept the Privacy Policy to send your message.'
+        status.textContent = bad.type === 'checkbox' ? 'Please confirm that you have read the Privacy Policy.'
           : (bad.type === 'email' && bad.value) ? 'Please enter a valid email address.' : 'Please fill in all required fields.';
         status.classList.add('err'); bad.focus(); return;
       }
