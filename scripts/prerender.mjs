@@ -1,5 +1,5 @@
 // Writes a crawler-readable copy of the Outreach catalogue and project list
-// into education.html, generated from the same COURSES / PROJECTS data the
+// into outreach.html, generated from the same COURSES / PROJECTS data the
 // page uses at runtime.
 //
 // Why: the course cards, course details and project list are rendered by
@@ -11,7 +11,7 @@
 //   2. Schema.org JSON-LD (ItemList of Course) in <head>.
 //
 // Usage: node scripts/prerender.mjs
-// Run it after editing COURSES or PROJECTS in education.html. It also runs on
+// Run it after editing COURSES or PROJECTS in outreach.html. It also runs on
 // every Netlify deploy (see netlify.toml). It is idempotent and never fails
 // the build: if something is off it prints a warning and leaves files as-is.
 
@@ -97,7 +97,7 @@ function projectsHtml(projects) {
       `</article>`,
     ].filter(Boolean).join('\n');
   });
-  return `<sc-if value="{{ false }}">\n<div data-static-fallback="projects">\n<h2>Latest educational projects</h2>\n${items.join('\n')}\n</div>\n</sc-if>`;
+  return `<sc-if value="{{ false }}">\n<div data-static-fallback="projects">\n<h2>Outreach, workshops &amp; events</h2>\n${items.join('\n')}\n</div>\n</sc-if>`;
 }
 
 function coursesJsonLd(courses) {
@@ -105,7 +105,7 @@ function coursesJsonLd(courses) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Space and STEM courses and workshops by Ilaria Fiore',
-    url: `${SITE}/education#courses`,
+    url: `${SITE}/outreach#courses`,
     itemListElement: courses.map((c, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -126,7 +126,7 @@ function coursesJsonLd(courses) {
 }
 
 function run() {
-  const file = join(ROOT, 'education.html');
+  const file = join(ROOT, 'outreach.html');
   let src = readFileSync(file, 'utf8');
   const courses = grabArray(src, 'COURSES');
   const projects = grabArray(src, 'PROJECTS');
@@ -138,7 +138,7 @@ function run() {
   src = replaceBetween(src, 'JSONLD-COURSES', coursesJsonLd(courses), '</head>');
 
   writeFileSync(file, src);
-  console.log(`prerender: education.html updated (${courses.length} courses, ${projects.length} projects)`);
+  console.log(`prerender: outreach.html updated (${courses.length} courses, ${projects.length} projects)`);
 }
 
 try {

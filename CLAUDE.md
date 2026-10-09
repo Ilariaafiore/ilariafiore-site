@@ -5,7 +5,7 @@ Static site deployed on Netlify from this repository. Pages are Claude Design ex
 ## Keeping the site readable by search engines and AI crawlers
 
 - Each page has its own `<title>`, meta description, canonical URL, Open Graph tags and JSON-LD in the real `<head>`. Update them when a page's content changes.
-- `education.html` contains generated blocks between `STATIC-COURSES`, `STATIC-PROJECTS` and `JSONLD-COURSES` markers. Do not edit them by hand: after changing `COURSES` or `PROJECTS`, run `node scripts/prerender.mjs`. Netlify also runs it on every deploy (`netlify.toml`).
+- `outreach.html` (served at `/outreach`; `/education` redirects there) contains generated blocks between `STATIC-COURSES`, `STATIC-PROJECTS` and `JSONLD-COURSES` markers. Do not edit them by hand: after changing `COURSES` or `PROJECTS`, run `node scripts/prerender.mjs`. Netlify also runs it on every deploy (`netlify.toml`).
 - When adding or removing a page, update `sitemap.xml`.
 - Strings in the page data scripts use single quotes: write apostrophes as the escape `\u2019` (or the typographic ’), never a straight `'`.
 
