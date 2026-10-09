@@ -1,5 +1,16 @@
 # Regenerates the crawler-readable copy of the Outreach catalogue on every
-# deploy, so it always matches the COURSES / PROJECTS data in education.html.
+# deploy, so it always matches the COURSES / PROJECTS data in outreach.html.
 [build]
   publish = "."
   command = "node scripts/prerender.mjs"
+
+# The Outreach page used to live at /education: keep old links working.
+[[redirects]]
+  from = "/education"
+  to = "/outreach"
+  status = 301
+
+[[redirects]]
+  from = "/education.html"
+  to = "/outreach"
+  status = 301
