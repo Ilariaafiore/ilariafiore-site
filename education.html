@@ -239,7 +239,7 @@
       </div>
       <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
         <div id="{{ p.anchor }}" onClick="{{ p.open }}" role="button" tabIndex="0" style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 90px 30px;gap:clamp(14px,calc(3vw / var(--vz, 1)),44px);padding:22px clamp(6px,calc(1vw / var(--vz, 1)),14px);border-top:1px solid rgba(255,255,255,.08);align-items:center;cursor:pointer;background:{{ p.bg }};box-shadow:{{ p.glow }};transition:background .6s,box-shadow .6s;" style-hover="background:rgba(255,255,255,.035);">
-          <span style="font-size:16px;color:#EDEDEF;white-space:pre-line;">{{ p.name }}</span>
+          <span style="display:flex;flex-direction:column;gap:5px;min-width:0;"><span style="font-size:16px;color:#EDEDEF;white-space:pre-line;">{{ p.name }}</span><sc-if value="{{ p.nameEn }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:14px;line-height:1.3;color:#C6A06B;">{{ p.nameEn }}</span></sc-if></span>
           <span style="font-size:12px;color:#9A9AA2;font-weight:300;white-space:pre-line;">{{ p.host }}</span>
           <span style="font-size:12px;color:#9A9AA2;font-weight:300;white-space:nowrap;">{{ p.year }}</span>
           <span style="font-size:15px;color:#C6A06B;text-align:right;">&#8594;</span>
@@ -325,7 +325,7 @@
 
   <section style="position:relative;z-index:5;max-width:min(1760px,100%);margin:0 auto;padding:clamp(44px,calc(6vh / var(--vz, 1)),80px) clamp(16px,calc(3vw / var(--vz, 1)),40px) clamp(80px,calc(12vh / var(--vz, 1)),140px);">
     <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:clamp(44px,calc(6vh / var(--vz, 1)),70px);text-align:center;">
-      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,calc(3.4vw / var(--vz, 1)),46px);line-height:1.1;color:#F4F4F6;margin:0;">Planning something<br>for your students?</h2>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(26px,calc(3.4vw / var(--vz, 1)),46px);line-height:1.1;color:#F4F4F6;margin:0;">Planning something<br>for your audience?</h2>
       <p style="font-size:16px;line-height:1.7;color:#9A9AA2;margin:22px auto 32px;max-width:52ch;font-weight:300;">Tell me the age group and the time you have, and I&#8217;ll propose a format.</p>
       <a href="#contact" data-contact="true" style="display:inline-flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#EDEDEF;border:1px solid rgba(198,160,107,.45);border-radius:999px;padding:14px 26px;white-space:nowrap;transition:border-color .3s,color .3s,box-shadow .4s;" style-hover="border-color:#C6A06B;color:#FFFFFF;box-shadow:0 0 40px rgba(198,160,107,.2);">Get in touch <span>&#8594;</span></a>
     </div>
@@ -517,59 +517,59 @@ const ART = [
 ];
 
 const PROJECTS = [
-  { name: 'Orientarsi oltre la Terra\n(Finding Our Bearings Beyond Earth)', host: 'TEDxApricena, Apricena | Italy', year: 'Oct 2026',
+  { key: 'orientarsi-oltre-la-terra-finding-our-bearings-beyond-earth', name: 'Orientarsi oltre la Terra', nameEn: 'Finding Our Bearings Beyond Earth', host: 'TEDxApricena, Apricena | Italy', year: 'Oct 2026',
     modalTitle: 'Orientarsi oltre la Terra (Finding Our Bearings Beyond Earth)',
     desc: 'What happens to our points of reference when our perspective changes? This talk takes the audience on a journey from Earth to the International Space Station, and on to the Moon and Mars. It explores how orientation, our perception of the sky, and the way we inhabit space change far from our home planet. In orbit, “up” and “down” have to be designed. From the Martian sky, Earth is just a bright dot. In the habitats of the future, every detail becomes a reference point. Bridging science communication and space architecture, the talk carries a message that applies to everyone: points of reference are not always found. Sometimes, we build them.',
     specs: [{ k: 'Theme', v: 'How what we see and the spaces we inhabit change' }, { k: 'Invited by', v: 'TEDxApricena · “Oltre la Pietra” (“Beyond the Stone”) edition' }, { k: 'When', v: 'October 3, 2026' }, { k: 'Where', v: 'Casa Matteo Salvatore, Apricena | Italy' }],
     images: ['uploads/TEDxApricena-1.jpg', 'uploads/TEDxApricena-2.jpg', 'uploads/TEDxApricena-3.jpg'],
     href: 'https://m.twitch.tv/tedxapricena', linkLabel: 'Watch on Twitch' },
-  { name: 'Discovering Space', host: 'I.C. Pascoli F. Melchionda,\nSan Giovanni Rotondo | Italy', year: 'May 2026',
+  { key: 'discovering-space', name: 'Alla scoperta dello Spazio', nameEn: 'Discovering Space', host: 'I.C. Pascoli F. Melchionda,\nSan Giovanni Rotondo | Italy', year: 'May 2026',
     modalTitle: 'Discover Space',
     desc: 'An interactive STEAM-focused lecture with primary school students, guiding them on a journey to discover the wonders of the universe. The session introduced foundational space concepts about the solar system, the space exploration and Artemis II mission.',
     specs: [{ k: 'Invited by', v: 'I.C. Pascoli F. Melchionda, San Giovanni Rotondo | Italy' }, { k: 'When', v: 'May 2026' }, { k: 'Format', v: 'In-person guest lecture\n2 classes, 40 students' }],
     images: ['uploads/1-a6811888.png', 'uploads/WhatsApp%20Image%202026-08-29%20at%2017.20.25.jpeg', 'uploads/Matite.png', 'uploads/Spazio%20lavoretti.png'],
     href: 'https://www.pascolifmelchiondadb.edu.it/alla-scoperta-dello-spazio/', linkLabel: 'Read full article' },
-  { name: 'Living the Outer Space', host: 'I.C. Dante Galiani, San Giovanni Rotondo | Italy', year: 'Mar 2026',
+  { key: 'living-the-outer-space', name: 'Vivere lo Spazio', nameEn: 'Living the Outer Space', host: 'I.C. Dante Galiani, San Giovanni Rotondo | Italy', year: 'Mar 2026',
     modalTitle: 'Living the Outer Space',
     desc: 'An engaging session bringing the space architecture directly into the primary school classroom. The intervention focused on inspiring young students by showing them how creativity, science, and engineering come together to design habitats for the Moon and beyond, proving that the future of space exploration needs both imagination and STEM skills.',
     specs: [{ k: 'Invited by', v: 'I.C. Dante Galiani, San Giovanni Rotondo | Italy' }, { k: 'When', v: 'March 2026' }, { k: 'Format', v: 'In-person guest lecture\n6 classes, 100 students' }],
     images: ['uploads/Lecture%20SGR.png'],
     href: 'https://www.icdantegaliani.it/un-architetto-dello-spazio-alla-primaria/', linkLabel: 'Read full article' },
-  { name: 'Little Space Explorers', host: 'LibreriBr\u00E0, San Giovanni Rotondo | Italy', year: 'Feb-Mar 2026',
+  { key: 'little-space-explorers', name: 'Piccoli Esploratori dello Spazio', nameEn: 'Little Space Explorers', host: 'LibreriBr\u00E0, San Giovanni Rotondo | Italy', year: 'Feb-Mar 2026',
     modalTitle: 'Little Space Explorers',
     desc: 'A 4-session experiential learning pathway aimed at children aged 3 to 13, divided into four age groups to tailor activities to their cognitive and social development. Through games, storytelling, and creative activities, children explore core space themes: solar systems, space missions, astonauts file, and living in space. Built on the principles of discovery-based education and integrated STEM, each lesson is designed in a playful, accessible way to boost transversal skills like problem-solving, teamwork, and creative thinking.',
     specs: [{ k: 'Invited by', v: 'LibreriBr\u00E0, San Giovanni Rotondo | Italy' }, { k: 'When', v: 'February - March 2026' }, { k: 'Format', v: '4 session in-person workshop' }],
     images: ['uploads/B.png', 'uploads/1.png', 'uploads/2.png', 'uploads/3.png', 'uploads/4.png', 'uploads/5.png', 'uploads/6.png', 'uploads/7.png', 'uploads/a.png'],
     href: 'https://www.instagram.com/p/DUoPY9jiPZ5/?igsi=MTB4MWR0d29kaDE2OA%3D%3D', linkLabel: 'See the poster' },
-  { name: 'Spazio allo Spazio', host: '\u201CE. Fermi\u201D, Villasanta | Italy', year: 'Feb 2026',
+  { key: 'spazio-allo-spazio', name: 'Spazio allo Spazio', nameEn: 'Making Room for Space', host: '\u201CE. Fermi\u201D, Villasanta | Italy', year: 'Feb 2026',
     modalTitle: 'Spazio allo Spazio',
     desc: 'An orientative talk exploring the diverse career opportunities within the rapidly growing space sector. Organized for STEM Day, the session aimed to break stereotypes and inspire students by showcasing the real-world impact of space technologies and the wide variety of specialized roles needed for future missions.',
     specs: [{ k: 'Invited by', v: '\u201CE. Fermi\u201D, Villasanta | Italy' }, { k: 'When', v: 'February 2026' }, { k: 'Format', v: 'Remote talk' }],
     image: 'uploads/Spazio%20allo%20Spazio.jpeg',
     href: 'https://spazioallospazio.blogspot.com/2026/02/spazio-alle-stem.html?m=1', linkLabel: 'Read full article' },
-  { name: 'SEDS Italy Space Conference 2025', host: 'SEDS Italy, Bari | Italy', year: 'Oct 2025',
+  { key: 'seds-italy-space-conference-2025', name: 'SEDS Italy Space Conference 2025', host: 'SEDS Italy, Bari | Italy', year: 'Oct 2025',
     modalTitle: 'SEDS Italy Space Conference 2025',
     desc: 'Event Manager for the SEDS Italy Space Conference, an itinerant national conference, designed to bridge the gap between university students and the local aerospace industry. The initiative aims to foster networking, career opportunities, and knowledge exchange within the growing Italian space ecosystem. Beyond overseeing the event\u2019s organization, I moderated the panel \u201CEngineering stories in the space sector\u201D, facilitating a dynamic dialogue between academia and industry featuring experts from Politecnico di Bari (Prof. Francesco Ciampa, Prof.ssa Maria Cinefra, Prof. Gianluca Percoco) and STAM (Ing. Antonio Altana).',
     specs: [{ k: 'Invited by', v: 'SEDS Italy, Bari | Italy' }, { k: 'When', v: 'October 2025' }, { k: 'Format', v: 'In-person Conference &\nPanel Moderation' }],
     images: ['uploads/SISC25-6022%20%281%29.JPG', 'uploads/SISC25-6208%20%281%29.JPG', 'uploads/SISC25-6248%20%281%29.JPG', 'uploads/SISC25-6293.JPG', 'uploads/SISC25-6266%20%281%29.JPG'],
     href: 'https://www.youtube.com/watch?v=0Wi0RoQDSsg', linkLabel: 'Watch the Interview' },
-  { name: 'Il lato nascosto della Luna:\nle donne della missione Apollo 11', host: 'AIDIA, Lecco | Italy', year: 'Feb 2025',
+  { key: 'il-lato-nascosto-della-luna-le-donne-della-missione-apollo-11', name: 'Il lato nascosto della Luna:\nle donne della missione Apollo 11', nameEn: 'The Hidden Side of the Moon: The Women of Apollo 11', host: 'AIDIA, Lecco | Italy', year: 'Feb 2025',
     modalTitle: 'Il lato nascosto della Luna: le donne di Apollo 11',
     desc: 'A webinar dedicated to the stories of the pioneering women behind the Apollo 11 mission. The presentation highlighted the exceptional contributions of figures like Margaret Hamilton, JoAnn Morgan, Katherine Johnson, and Poppy Northcutt. By exploring their challenges, brilliant minds, and breakthroughs in a male-dominated era, the talk aimed to inspire current generations and emphasize the crucial need for female role models in STEM.',
     specs: [{ k: 'Invited by', v: 'AIDIA, Lecco | Italy' }, { k: 'When', v: 'February 2025' }, { k: 'Format', v: 'Online webinar' }],
     href: 'https://www.youtube.com/live/2uXtbCnqY6o?is=nPFfzsGYZpmz_bC8', linkLabel: 'Watch the webinar' },
-  { name: 'Donne e discipline STEM', host: 'NewZGen | Italy', year: 'May 2024',
+  { key: 'donne-e-discipline-stem', name: 'Donne e discipline STEM', nameEn: 'Women in STEM', host: 'NewZGen | Italy', year: 'May 2024',
     modalTitle: 'Donne e discipline STEM',
     desc: 'Exploring the role of women in STEM disciplines, attended as a Generazione STEM Ambassador. The conversation addressed the persistent biases and current disparities in career opportunities, while maintaining a proactive and constructive focus. The core message aimed to encourage young women to pursue their passions, break down existing barriers, and actively shape a more inclusive and equitable future in science and technology.',
     specs: [{ k: 'Invited by', v: 'NewZGen | Italy' }, { k: 'When', v: 'May 2024' }, { k: 'Format', v: 'Video interview' }],
     href: 'https://www.instagram.com/reel/C7hRSXyoydJ/?igsi=MXI3Y2loMTZncWptbg==', linkLabel: 'Watch the interview' },
-  { name: 'Piccoli Passi Verso la Luna', host: 'AIDIA, Lecco | Italy', year: 'Mar 2024',
+  { key: 'piccoli-passi-verso-la-luna', name: 'Piccoli Passi Verso la Luna', nameEn: 'Small Steps Towards the Moon', host: 'AIDIA, Lecco | Italy', year: 'Mar 2024',
     modalTitle: 'Piccoli Passi Verso la Luna',
     desc: 'Delivered during the STEM Olympics award ceremony, this orientative talk highlighted the importance of pursuing STEM career paths. The presentation explored the highly multidisciplinary nature of the space sector, inspiring students to believe that even the most ambitious and visionary ideas can become reality.',
     specs: [{ k: 'Invited by', v: 'AIDIA, Lecco | Italy' }, { k: 'When', v: 'March 2024' }, { k: 'Format', v: 'In-person orientative talk' }],
     images: ['uploads/AIDIA.jpeg', 'uploads/AIDIA%202.jpeg', 'uploads/AIDIA%203.jpeg', 'uploads/AIDIA%204.jpeg'],
     href: 'https://www.instagram.com/p/C4lDenTsxtD/?igsi=ank2OWVkNmx6Y3N6', linkLabel: 'View on Instagram' },
-  { name: 'SEDS Italy Space Conference 2023', host: 'SEDS Italy, Novara | Italy', year: 'Oct 2023',
+  { key: 'seds-italy-space-conference-2023', name: 'SEDS Italy Space Conference 2023', host: 'SEDS Italy, Novara | Italy', year: 'Oct 2023',
     modalTitle: 'SEDS Italy Space Conference 2023',
     desc: 'Served as the Event Manager for the largest space conference in Italy entirely organized by university students. Hosted in collaboration with the Universit\u00E0 del Piemonte Orientale, the event was specifically designed to create a direct bridge between students and the aerospace industry. The initiative provided a crucial platform for networking, showcasing emerging technologies, and facilitating concrete career opportunities within the national space ecosystem.',
     specs: [{ k: 'Organized for', v: 'SEDS Italy, Novara | Italy' }, { k: 'When', v: 'October 2023' }, { k: 'Format', v: 'In-person Conference' }],
@@ -597,7 +597,7 @@ class Component extends DCLogic {
         }
       }, 300);
     }
-    const idx = PROJECTS.findIndex(p => this.slug(p.name) === hash);
+    const idx = PROJECTS.findIndex(p => this.slug(p.key) === hash);
     if (idx >= 0) {
       this.setState({ showAllProjects: idx >= 4 || this.state.showAllProjects, highlight: idx });
       const go = (tries) => {
@@ -655,7 +655,7 @@ class Component extends DCLogic {
       stop: (e) => e.stopPropagation(),
       coursesPrev: () => this.scrollCourses(-1),
       coursesNext: () => this.scrollCourses(1),
-      projects: PROJECTS.map((p, i) => ({ ...p, idx: i, anchor: this.slug(p.name), bg: this.state.highlight === i ? 'rgba(198,160,107,.08)' : 'transparent', glow: this.state.highlight === i ? 'inset 0 0 0 1px rgba(198,160,107,.55), 0 0 40px rgba(198,160,107,.14)' : 'none', meta: p.host + ' \u00B7 ' + p.year, open: () => this.setState({ project: i }) }))
+      projects: PROJECTS.map((p, i) => ({ ...p, idx: i, anchor: this.slug(p.key), bg: this.state.highlight === i ? 'rgba(198,160,107,.08)' : 'transparent', glow: this.state.highlight === i ? 'inset 0 0 0 1px rgba(198,160,107,.55), 0 0 40px rgba(198,160,107,.14)' : 'none', meta: p.host + ' \u00B7 ' + p.year, open: () => this.setState({ project: i }) }))
         .filter((p) => this.state.showAllProjects || p.idx < 4),
       hasMoreProjects: PROJECTS.length > 4,
       moreLabel: this.state.showAllProjects ? 'View less' : 'View more',
