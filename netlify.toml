@@ -1,0 +1,5 @@
+# Regenerates the crawler-readable copy of the Outreach catalogue on every
+# deploy, so it always matches the COURSES / PROJECTS data in education.html.
+[build]
+  publish = "."
+  command = "node scripts/prerender.mjs"
