@@ -319,8 +319,8 @@
       <h1 data-reveal style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,calc(4.4vw / var(--vz, 1)),62px);line-height:1.06;letter-spacing:-.015em;color:#F4F4F6;margin:0;max-width:22ch;">Making Space and STEM<br><em style="font-style:italic;color:#C6A06B;">accessible for everyone.</em></h1>
       <p data-reveal style="margin:26px 0 0;font-size:16px;line-height:1.72;color:#9A9AA2;max-width:58ch;font-weight:300;">Interactive workshops, courses, and public events designed for all ages, built around real space missions and emerging technologies.</p>
     </div>
-    <!-- auto-scrolling photos -->
-    <div data-reveal style="flex:0 1 520px;min-width:min(100%,280px);position:relative;aspect-ratio:4/3;border:1px solid rgba(198,160,107,.25);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025);">
+    <!-- auto-scrolling photos: click (or Enter / Space) for the next one -->
+    <div data-reveal role="button" tabIndex="0" aria-label="Show next photo" onClick="{{ heroNext }}" onKeyDown="{{ heroKey }}" style="flex:0 1 520px;min-width:min(100%,280px);position:relative;aspect-ratio:4/3;cursor:pointer;border:1px solid rgba(198,160,107,.25);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025);">
       <div id="outreach-carousel" style="display:flex;width:100%;height:100%;transition:transform 1.1s cubic-bezier(.65,0,.35,1);">
         <image-slot id="outreach-hero-1" src="uploads/outreach-hero-01.jpg" role="img" aria-label="Ilaria Fiore at the SEDS Italy Space Conference 2025 in Bari" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 1"></image-slot>
         <image-slot id="outreach-hero-2" src="uploads/outreach-hero-02.jpg" role="img" aria-label="The SEDS Italy Space Conference 2025 team on stage" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 2"></image-slot>
@@ -332,6 +332,7 @@
         <image-slot id="outreach-hero-8" src="uploads/outreach-hero-08.jpg" role="img" aria-label="Little Space Explorers workshop with children at LibreriBrà, San Giovanni Rotondo" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 8"></image-slot>
         <image-slot id="outreach-hero-9" src="uploads/outreach-hero-09.jpg" role="img" aria-label="Children building a Solar System poster during Little Space Explorers" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 9"></image-slot>
         <image-slot id="outreach-hero-10" src="uploads/outreach-hero-10.jpg" role="img" aria-label="Ilaria Fiore guiding a drawing activity during Little Space Explorers" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder="Drop photo 10"></image-slot>
+        <image-slot id="outreach-hero-loop" src="uploads/outreach-hero-01.jpg" aria-hidden="true" style="flex:0 0 100%;height:100%;" shape="rect" fit="cover" placeholder=""></image-slot>
       </div>
     </div>
   </section>
@@ -1044,16 +1045,45 @@ class Component extends DCLogic {
   }
   cslug(t) { return 'course-' + String(t).split(':')[0].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   slug(s) { return 'project-' + String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
-  componentWillUnmount() { window.removeEventListener('keydown', this._esc); clearTimeout(this._hl); clearTimeout(this._chl); clearInterval(this._carousel); }
+  componentWillUnmount() { window.removeEventListener('keydown', this._esc); clearTimeout(this._hl); clearTimeout(this._chl); clearInterval(this._carousel); clearTimeout(this._heroT); }
+  // Hero photo carousel. The last slide is a copy of the first: after sliding
+  // onto it, the track jumps back to the real first slide without animation,
+  // so the photos always move forward in a continuous loop.
   initCarousel() {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    let i = 0;
-    this._carousel = setInterval(() => {
-      const track = document.getElementById('outreach-carousel');
-      if (!track || document.hidden) return;
-      i = (i + 1) % track.children.length;
-      track.style.transform = 'translateX(' + (-100 * i) + '%)';
-    }, 4500);
+    this._heroIndex = 0;
+    this._heroBusy = false;
+    this._heroAuto = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    this.startHeroTimer();
+  }
+  startHeroTimer() {
+    clearInterval(this._carousel);
+    if (!this._heroAuto) return;
+    this._carousel = setInterval(() => { if (!document.hidden) this.heroStep(); }, 4500);
+  }
+  heroStep() {
+    const track = document.getElementById('outreach-carousel');
+    if (!track || this._heroBusy) return;
+    const last = track.children.length - 1;
+    const SLIDE = 'transform 1.1s cubic-bezier(.65,0,.35,1)';
+    this._heroBusy = true;
+    this._heroIndex = Math.min(this._heroIndex + 1, last);
+    track.style.transition = SLIDE;
+    track.style.transform = 'translateX(' + (-100 * this._heroIndex) + '%)';
+    clearTimeout(this._heroT);
+    this._heroT = setTimeout(() => {
+      if (this._heroIndex === last) {
+        track.style.transition = 'none';
+        this._heroIndex = 0;
+        track.style.transform = 'translateX(0%)';
+        void track.offsetWidth;
+        track.style.transition = SLIDE;
+      }
+      this._heroBusy = false;
+    }, 1150);
+  }
+  heroNext() {
+    this.heroStep();
+    this.startHeroTimer();
   }
   scrollCourses(dir) {
     const el = document.getElementById('courses-scroll');
@@ -1084,6 +1114,8 @@ class Component extends DCLogic {
       modalOpen: sel != null,
       sel: sel || {},
       closeModal: () => this.setState({ selected: null }),
+      heroNext: () => this.heroNext(),
+      heroKey: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.heroNext(); } },
       stop: (e) => e.stopPropagation(),
       coursesPrev: () => this.scrollCourses(-1),
       coursesNext: () => this.scrollCourses(1),
